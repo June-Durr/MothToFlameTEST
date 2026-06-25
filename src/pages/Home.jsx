@@ -583,6 +583,81 @@ export default function Home() {
           >
             Follow us where the fire spreads.
           </h2>
+
+          {/* Social links */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "clamp(1.5rem, 5vw, 3rem)",
+              marginBottom: "2.5rem",
+              flexWrap: "wrap",
+            }}
+          >
+            {[
+              {
+                label: "Facebook",
+                href: "#",
+                icon: (
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                ),
+              },
+              {
+                label: "Instagram",
+                href: "#",
+                icon: (
+                  <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                ),
+              },
+            ].map(({ label, href, icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "0.6rem",
+                  color: "var(--color-cream-dim)",
+                  textDecoration: "none",
+                  transition: "color var(--transition-base)",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-amber-light)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-cream-dim)")}
+              >
+                {icon}
+                <span
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.6rem",
+                    fontWeight: 500,
+                    letterSpacing: "0.3em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {label}
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div
+            style={{
+              width: "40px",
+              height: "1px",
+              background: "rgba(217,119,6,0.35)",
+              margin: "0 auto 2.5rem",
+            }}
+          />
+
           <Button href="/contact" style={{ marginTop: "1rem" }}>
             Book the Band
           </Button>

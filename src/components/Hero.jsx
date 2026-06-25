@@ -48,21 +48,22 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
         position: "relative",
         height: "100dvh",
         minHeight: "640px",
+        maxWidth: "1920px",
+        margin: "0 auto",
         overflow: "hidden",
         background: "var(--color-void)",
       }}
     >
       {/* Parallax background photo */}
       <motion.div
+        className="hero-photo"
         style={{
+          "--hero-bg": `url(${bandPhoto})`,
           position: "absolute",
           inset: 0,
           zIndex: 0,
           y: reduce ? 0 : photoY,
           scale: reduce ? 1.08 : photoScale,
-          backgroundImage: `url(${bandPhoto})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 32%",
           willChange: "transform",
         }}
       />
@@ -226,6 +227,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
 
       {/* Scroll cue — bottom left, opposite the type for balance */}
       <motion.div
+        className="hero-scroll-cue"
         variants={fadeUp(1.6)}
         initial="hidden"
         animate="show"

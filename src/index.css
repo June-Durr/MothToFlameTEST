@@ -59,6 +59,31 @@ body {
 }
 
 /* ──────────────────────────────────────────────
+   Hero background photo
+   backgroundImage comes from --hero-bg CSS variable set inline (it's a prop).
+   backgroundSize/Position live here so media queries can override them without
+   fighting Framer Motion's inline transform styles.
+   ────────────────────────────────────────────── */
+.hero-photo {
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center 32%;
+}
+/* On mobile portrait, shift right so the rightmost band member stays visible */
+@media (max-width: 640px) {
+  .hero-photo {
+    background-position: 68% 30%;
+  }
+}
+
+/* Hide the decorative scroll cue on mobile — it collides with the CTA buttons */
+@media (max-width: 640px) {
+  .hero-scroll-cue {
+    display: none;
+  }
+}
+
+/* ──────────────────────────────────────────────
    Hero texture — film grain + drifting ember smoke
    Used by the new Hero component. Self-contained so
    it can be removed cleanly if reverted.
