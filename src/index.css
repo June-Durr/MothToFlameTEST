@@ -69,10 +69,13 @@ body {
   background-size: cover;
   background-position: center center;
 }
-/* On mobile portrait, shift right so the rightmost band member stays visible */
+/* On mobile portrait, scale image to full viewport width so all 4 members are
+   visible. The image sits at the top; the dark void + gradient fill below it. */
 @media (max-width: 640px) {
   .hero-photo {
-    background-position: center center;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 }
 
@@ -80,6 +83,15 @@ body {
 @media (max-width: 640px) {
   .hero-scroll-cue {
     display: none;
+  }
+}
+
+/* Desktop: constrain the text block to the right half so the large headline
+   can't extend far enough left to cover the band members */
+@media (min-width: 769px) {
+  .hero-content {
+    max-width: 55%;
+    margin-left: auto;
   }
 }
 

@@ -117,6 +117,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
 
       {/* Content — anchored bottom-RIGHT, asymmetric */}
       <motion.div
+        className="hero-content"
         style={{
           position: "absolute",
           left: 0,
