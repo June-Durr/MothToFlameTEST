@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <main>
-      <Hero bandPhoto="/assets/Band2.png" />
+      <Hero bandPhoto="/assets/band2.webp" />
 
       <section
         style={{
