@@ -67,7 +67,7 @@ body {
 .hero-photo {
   background-image: var(--hero-bg);
   background-size: cover;
-  background-position: center 32%;
+  background-position: center 42%;
 }
 /* On mobile portrait, shift right so the rightmost band member stays visible */
 @media (max-width: 640px) {

@@ -48,8 +48,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
         position: "relative",
         height: "100dvh",
         minHeight: "640px",
-        maxWidth: "1280px",
-        margin: "0 auto",
+
         overflow: "hidden",
         background: "var(--color-void)",
       }}
