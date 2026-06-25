@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Moth to Flame — Official Band Website" />
+    <title>Moth to Flame</title>
+
+    <!-- Preload hero photo so it loads BEFORE the letter animation runs.
+         Without this, the image arrives mid-animation and the resulting
+         repaint makes the letters look like they re-render twice. -->
+    <link rel="preload" as="image" href="/assets/band1.png" fetchpriority="high" />
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

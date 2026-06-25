@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Moth to Flame — Admin</title>
+
+  <!--
+    UX polish via injected CSS:
+      - Hide the global Media library tab (uploads happen inline per field)
+      - Hide the unhelpful "Check for Preview" button (no preview pane is configured)
+      - Hide the empty preview pane on edit screens
+  -->
+  <style>
+    /* Top-nav: hide Media link */
+    nav a[href$="/media"],
+    [class*="MediaButton"],
+    [class*="media-button"] { display: none !important; }
+
+    /* Hide the right-hand preview pane and its toggle so the editor is full-width */
+    [class*="PreviewPaneFrame"],
+    [class*="EditorPreviewWrapper"],
+    [class*="EditorToggle"] { display: none !important; }
+    [class*="EditorContent"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Make the publish button more prominent so Tyson notices it */
+    [class*="ToolbarSectionMain"] button[class*="Publish"],
+    [class*="PublishButton"] {
+      box-shadow: 0 0 0 2px rgba(217,119,6,0.6), 0 0 14px rgba(217,119,6,0.35) !important;
+    }
+  </style>
+
+  <!-- Netlify Identity widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Decap CMS CDN -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>

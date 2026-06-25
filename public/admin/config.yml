@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are saved
+media_folder: public/assets
+public_folder: /assets
+
+# Invite-only — do NOT enable open registration
+publish_mode: simple
+
+# Slim mobile-friendly editor
+display_url: https://mothtoflame.com
+logo_url: /assets/band.jpg
+
+collections:
+  # ────────────────────────────────────────────────
+  # SHOWS — date list editable from phone
+  # ────────────────────────────────────────────────
+  - name: shows
+    label: Shows
+    label_singular: Show
+    files:
+      - name: shows
+        label: Upcoming Shows
+        file: public/content/shows/shows.json
+        description: "Add, edit, or remove upcoming show dates. The site updates within about a minute of saving."
+        fields:
+          - name: shows
+            label: Shows
+            label_singular: Show
+            widget: list
+            summary: "{{fields.date}} — {{fields.venue}}, {{fields.city}}"
+            fields:
+              - name: date
+                label: Date
+                widget: string
+                hint: "Format: Month Day, Year (e.g. May 17, 2026)"
+                pattern:
+                  [
+                    '^[A-Za-z]{3,9} \d{1,2}, \d{4}$',
+                    "Use the format: May 17, 2026",
+                  ]
+              - name: venue
+                label: Venue Name
+                widget: string
+                hint: "Capitalize properly (e.g. Gramercy Theatre)."
+              - name: city
+                label: City & State
+                widget: string
+                hint: "Format: City, ST (e.g. New York, NY)"
+                pattern:
+                  [
+                    "^[A-Za-z .'-]+, [A-Z]{2}$",
+                    "Use the format: City, ST — for example: New York, NY",
+                  ]
+              - name: ticketLink
+                label: Ticket Link
+                widget: string
+                required: false
+                hint: "Paste the FULL ticket URL starting with https:// — leave blank if no tickets yet. Do NOT paste markdown links like [text](url)."
+                pattern:
+                  [
+                    "^(https?://.+|)$",
+                    "Must start with https:// — or leave it blank",
+                  ]
+
+  # ────────────────────────────────────────────────
+  # VIDEOS — YouTube embeds editable from phone
+  # ────────────────────────────────────────────────
+  - name: videos
+    label: Videos
+    label_singular: Video
+    files:
+      - name: videos
+        label: YouTube Videos
+        file: public/content/site/videos.json
+        description: "Add, remove, or reorder videos. The first three appear on the home page; all of them appear on the Videos page."
+        fields:
+          - name: videos
+            label: Videos
+            label_singular: Video
+            widget: list
+            summary: "{{fields.title}}  ·  ID {{fields.id}}"
+            fields:
+              - name: id
+                label: YouTube Video ID
+                widget: string
+                hint: "The 11-character ID from a YouTube URL. Example: for https://youtu.be/A7f0O3nuQ-s the ID is A7f0O3nuQ-s. Find it in any YouTube share link."
+                pattern:
+                  [
+                    "^[A-Za-z0-9_-]{11}$",
+                    "Must be exactly 11 characters (letters, numbers, _ or -)",
+                  ]
+              - name: title
+                label: Track Title
+                widget: string
+                hint: "How the title appears under the video on the site."
+
+  # ────────────────────────────────────────────────
+  # PHOTOS — replace any image, no resizing required
+  # ────────────────────────────────────────────────
+  - name: photos
+    label: Photos
+    files:
+      - name: photos
+        label: Site Photos
+        file: public/content/site/photos.json
+        description: |
+          Replace any photo by uploading a new one. After uploading, hit the BLUE PUBLISH button at the top right to make the change live — uploading alone doesn't save it. The site updates within about a minute of publishing.
+
+          The site automatically crops images to fit, so don't worry about exact dimensions — but matching the recommended size keeps everything looking sharp.
+
+          RECOMMENDED SIZES:
+          • Member portraits: PORTRAIT orientation, around 1200x1600 (3:4 ratio)
+          • Band group photo: PORTRAIT orientation, around 1600x2000 works best for the home hero
+          • Format: JPG (smaller file size = faster site)
+          • If your phone shoots HEIC, convert to JPG first (most photo apps have a "Save as JPG" option)
+        fields:
+          - name: band
+            label: Band Group Photo (used as Home page background)
+            widget: image
+            hint: "Portrait orientation works best (1600x2000+ recommended). The whole band should be visible — face area lands in the upper third of the frame."
+          - name: tyson
+            label: Tyson Harvey (Guitar)
+            widget: image
+            hint: "Portrait orientation, ~1200x1600. Face in upper third of frame."
+          - name: john
+            label: John Krtil (Bass)
+            widget: image
+            hint: "Portrait orientation, ~1200x1600. Face in upper third of frame."
+          - name: ivo
+            label: Ivo Lorenz (Keys)
+            widget: image
+            hint: "Portrait orientation, ~1200x1600. Face in upper third of frame."
+          - name: shariq
+            label: Shariq Tucker (Drums)
+            widget: image
+            hint: "Portrait orientation, ~1200x1600. Face in upper third of frame."
