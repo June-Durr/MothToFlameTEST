@@ -74,9 +74,9 @@ body {
   /* Section height = exact height of the 16:9 landscape image at full viewport width.
      This means the image shows ALL 4 members with zero gap. Text overlays the bottom. */
   .hero-section {
-    height: 56.25vw !important;
-    min-height: 200px !important;
-    max-height: 340px !important;
+    height: 84.375vw !important;
+    min-height: 300px !important;
+    max-height: 510px !important;
   }
 
   /* Scale image to full viewport width — all 4 members fit */
