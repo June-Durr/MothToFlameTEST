@@ -72,6 +72,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           type sits (so cream + ember letters stay legible) and keeps faces and
           the smoke fully visible. */}
       <div
+        className="hero-gradient"
         style={{
           position: "absolute",
           inset: 0,

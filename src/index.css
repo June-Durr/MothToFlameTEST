@@ -78,10 +78,23 @@ body {
     min-height: 560px !important;
   }
 
-  /* Cover fills the full section */
+  /* 100% auto shows all 4 members at full viewport width */
   .hero-photo {
-    background-size: cover !important;
-    background-position: 20% center !important;
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Fade the image into the void below it — makes the gap look intentional */
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40vw,
+      rgba(5,8,16,0.5) 52vw,
+      rgba(5,8,16,0.92) 60vw,
+      rgba(5,8,16,1) 68vw
+    ) !important;
   }
 
   /* Compact text overlay — sits at the bottom of the image */
