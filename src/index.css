@@ -69,29 +69,64 @@ body {
   background-size: cover;
   background-position: center center;
 }
-/* On mobile portrait, scale image to full viewport width so all 4 members are
-   visible. The image sits at the top; the dark void + gradient fill below it. */
+/* ── MOBILE HERO ── */
 @media (max-width: 640px) {
+  /* Section height = exact height of the 16:9 landscape image at full viewport width.
+     This means the image shows ALL 4 members with zero gap. Text overlays the bottom. */
+  .hero-section {
+    height: 56.25vw !important;
+    min-height: 200px !important;
+    max-height: 340px !important;
+  }
+
+  /* Scale image to full viewport width — all 4 members fit */
   .hero-photo {
-    background-size: 100% auto;
-    background-position: center top;
-    background-repeat: no-repeat;
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
   }
-}
 
-/* Hide the decorative scroll cue on mobile — it collides with the CTA buttons */
-@media (max-width: 640px) {
-  .hero-scroll-cue {
-    display: none;
-  }
-}
-
-/* Desktop: constrain the text block to the right half so the large headline
-   can't extend far enough left to cover the band members */
-@media (min-width: 769px) {
+  /* Compact text overlay — sits at the bottom of the image */
   .hero-content {
-    max-width: 55%;
-    margin-left: auto;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 1rem 0.75rem !important;
+  }
+
+  /* Smaller headline */
+  .hero-title span:first-child {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+  }
+  .hero-title span:nth-child(2) {
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem) !important;
+    white-space: nowrap !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hide eyebrow — saves space, faces stay unobstructed */
+  .hero-eyebrow {
+    display: none !important;
+  }
+
+  /* Smaller buttons */
+  .hero-content a {
+    padding: 0.5rem 1.1rem !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  /* Kill scroll cue */
+  .hero-scroll-cue {
+    display: none !important;
+  }
+
+  /* Nav — tighter so logo fits on one line */
+  .site-header {
+    padding: 0.65rem 1rem !important;
+  }
+  .nav-logo-text {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.1em !important;
   }
 }
 

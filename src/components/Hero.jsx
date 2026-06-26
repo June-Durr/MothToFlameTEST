@@ -44,11 +44,11 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
   return (
     <section
       ref={ref}
+      className="hero-section"
       style={{
         position: "relative",
         height: "100dvh",
         minHeight: "640px",
-
         overflow: "hidden",
         background: "var(--color-void)",
       }}
@@ -77,7 +77,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(to left, rgba(5,8,16,0.45) 0%, rgba(5,8,16,0.2) 50%, rgba(5,8,16,0.05) 80%, rgba(5,8,16,0.15) 100%), linear-gradient(to top, rgba(5,8,16,0.9) 0%, rgba(5,8,16,0.45) 45%, rgba(5,8,16,0.08) 70%, rgba(5,8,16,0.35) 100%)",
+            "linear-gradient(to left, rgba(5,8,16,0.12) 0%, rgba(5,8,16,0.08) 50%, rgba(5,8,16,0.02) 80%, rgba(5,8,16,0.08) 100%), linear-gradient(to top, rgba(5,8,16,0.9) 0%, rgba(5,8,16,0.45) 45%, rgba(5,8,16,0.05) 70%, rgba(5,8,16,0.18) 100%)",
         }}
       />
 
@@ -134,37 +134,8 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
             "0 clamp(1.5rem, 6vw, 6rem) clamp(3.5rem, 9vh, 6rem)",
         }}
       >
-        <motion.p
-          className="hero-eyebrow"
-          variants={fadeUp(0.15)}
-          initial="hidden"
-          animate="show"
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "clamp(0.7rem, 1.6vw, 0.85rem)",
-            fontWeight: 500,
-            letterSpacing: "0.4em",
-            textTransform: "uppercase",
-            color: "var(--color-amber-light)",
-            marginBottom: "clamp(1rem, 2.5vh, 1.75rem)",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.9rem",
-          }}
-        >
-          Genre-Defying · Tri-State · Since 2009
-          <span
-            style={{
-              width: "clamp(28px, 5vw, 56px)",
-              height: "1px",
-              background: "var(--color-amber)",
-              display: "inline-block",
-            }}
-          />
-        </motion.p>
-
         <h1
-          className="font-display"
+          className="font-display hero-title"
           style={{
             margin: 0,
             lineHeight: 0.9,
@@ -180,7 +151,7 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
             animate="show"
             style={{
               display: "block",
-              fontSize: "clamp(4rem, 16vw, 13rem)",
+              fontSize: "clamp(3.5rem, 11vw, 9rem)",
               fontWeight: 300,
               textTransform: "uppercase",
             }}
@@ -195,7 +166,8 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
             className="text-flame-gradient"
             style={{
               display: "block",
-              fontSize: "clamp(3.2rem, 13vw, 11rem)",
+              fontSize: "clamp(2.8rem, 9vw, 7.5rem)",
+              whiteSpace: "nowrap",
               fontWeight: 300,
               fontStyle: "italic",
               letterSpacing: "0.01em",
@@ -206,12 +178,41 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           </motion.span>
         </h1>
 
+        <motion.p
+          className="hero-eyebrow"
+          variants={fadeUp(0.8)}
+          initial="hidden"
+          animate="show"
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(0.6rem, 1.2vw, 0.78rem)",
+            fontWeight: 500,
+            letterSpacing: "0.4em",
+            textTransform: "uppercase",
+            color: "var(--color-amber-light)",
+            marginTop: "1.25rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.9rem",
+          }}
+        >
+          Genre-Defying · Tri-State · Since 2009
+          <span
+            style={{
+              width: "clamp(20px, 3vw, 40px)",
+              height: "1px",
+              background: "var(--color-amber)",
+              display: "inline-block",
+            }}
+          />
+        </motion.p>
+
         <motion.div
           variants={fadeUp(1.05)}
           initial="hidden"
           animate="show"
           style={{
-            marginTop: "clamp(1.75rem, 4vh, 2.75rem)",
+            marginTop: "clamp(1.25rem, 3vh, 2rem)",
             display: "flex",
             alignItems: "center",
             gap: "1rem",

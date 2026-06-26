@@ -24,6 +24,7 @@ export default function Nav() {
   return (
     <>
       <header
+        className="site-header"
         style={{
           position: 'fixed',
           top: 0,
@@ -58,6 +59,7 @@ export default function Nav() {
             style={{ flexShrink: 0 }}
           />
           <span
+            className="nav-logo-text"
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '1.25rem',
