@@ -73,7 +73,8 @@ body {
 @media (max-width: 640px) {
   /* Shorter section crops the excess smoke at top and dark ground at bottom */
   .hero-section {
-    height: 68dvh !important;
+    height: 68vh !important;
+    height: 68svh !important;
     min-height: 420px !important;
     max-height: none !important;
     touch-action: pan-y !important;

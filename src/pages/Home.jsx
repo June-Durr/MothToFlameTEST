@@ -80,7 +80,7 @@ export default function Home() {
         style={{
           padding: "clamp(5rem, 12vw, 9rem) 1.5rem",
           background:
-            "linear-gradient(to bottom, var(--color-void) 0%, rgba(13, 42, 50, 0.5) 50%, rgba(13, 42, 50, 0.3) 100%)",
+            "linear-gradient(to bottom, var(--color-void) 0%, rgba(13, 42, 50, 0.5) 50%, rgba(13, 42, 50, 0.42) 100%)",
           position: "relative",
         }}
       >
@@ -399,7 +399,7 @@ export default function Home() {
         style={{
           padding: "clamp(5rem, 12vw, 9rem) 1.5rem",
           background:
-            "radial-gradient(62% 42% at 50% 52%, rgba(234,88,12,0.07) 0%, transparent 64%), linear-gradient(to bottom, rgba(13, 42, 50, 0.3) 0%, rgba(13, 42, 50, 0.5) 50%, rgba(13, 42, 50, 0.3) 100%)",
+            "radial-gradient(62% 42% at 50% 52%, rgba(234,88,12,0.07) 0%, transparent 64%), linear-gradient(to bottom, rgba(13, 42, 50, 0.42) 0%, rgba(13, 42, 50, 0.5) 50%, rgba(13, 42, 50, 0.3) 100%)",
         }}
       >
         <div

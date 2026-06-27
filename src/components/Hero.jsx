@@ -1,15 +1,12 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Button from "./Button";
 
 export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 640);
-  }, []);
+  // Read synchronously on first render so parallax is never active on mobile
+  const [isMobile] = useState(() => window.innerWidth < 640);
 
   // Parallax: photo drifts down + scales slightly as the hero scrolls away.
   const { scrollYProgress } = useScroll({
@@ -58,8 +55,8 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           inset: 0,
           zIndex: 0,
           y: (reduce || isMobile) ? 0 : photoY,
-          scale: (reduce || isMobile) ? 1.08 : photoScale,
-          willChange: isMobile ? "auto" : "transform",
+          scale: reduce ? 1.08 : photoScale,
+          willChange: "transform",
         }}
       />
 
