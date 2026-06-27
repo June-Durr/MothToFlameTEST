@@ -71,18 +71,18 @@ body {
 }
 /* ── MOBILE HERO ── */
 @media (max-width: 640px) {
-  /* Portrait image fills the full screen — no cropping, all members visible */
+  /* Shorter section crops the excess smoke at top and dark ground at bottom */
   .hero-section {
-    height: 100dvh !important;
-    min-height: 560px !important;
+    height: 68dvh !important;
+    min-height: 420px !important;
     max-height: none !important;
   }
 
-  /* Swap in the 9:16 portrait image and cover the section perfectly */
+  /* Portrait image, position shifted to keep band members centered */
   .hero-photo {
     background-image: url('/assets/mobil.webp') !important;
     background-size: cover !important;
-    background-position: center 60% !important;
+    background-position: center 42% !important;
     background-repeat: no-repeat !important;
   }
 
