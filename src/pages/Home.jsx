@@ -200,7 +200,7 @@ export default function Home() {
         style={{
           padding: "clamp(5rem, 12vw, 9rem) 1.5rem",
           background:
-            "radial-gradient(70% 45% at 28% 50%, rgba(217,119,6,0.07) 0%, transparent 62%), linear-gradient(to bottom, rgba(13, 42, 50, 0.3) 0%, rgba(13, 42, 50, 0.48) 50%, rgba(13, 42, 50, 0.3) 100%)",
+            "radial-gradient(70% 45% at 28% 50%, rgba(217,119,6,0.06) 0%, transparent 62%), linear-gradient(to bottom, rgba(5,8,16,0.72) 0%, rgba(5,8,16,0.85) 50%, rgba(5,8,16,0.72) 100%)",
         }}
       >
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
