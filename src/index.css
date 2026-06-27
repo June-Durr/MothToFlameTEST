@@ -71,17 +71,17 @@ body {
 }
 /* ── MOBILE HERO ── */
 @media (max-width: 640px) {
-  /* Hero = exact image height. 56.25vw = 9/16 ratio of viewport width.
-     Image fits perfectly at 100% width — all 4 members visible, zero void. */
+  /* Portrait image fills the full screen — no cropping, all members visible */
   .hero-section {
-    height: 56.25vw !important;
-    min-height: 180px !important;
-    max-height: 380px !important;
+    height: 100dvh !important;
+    min-height: 560px !important;
+    max-height: none !important;
   }
 
-  /* Stretch to fill the section exactly — no crop, no gap */
+  /* Swap in the 9:16 portrait image and cover the section perfectly */
   .hero-photo {
-    background-size: 100% 100% !important;
+    background-image: url('/assets/mobil.webp') !important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
