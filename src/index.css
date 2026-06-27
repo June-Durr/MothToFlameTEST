@@ -82,7 +82,7 @@ body {
   .hero-photo {
     background-image: url('/assets/mobil.webp') !important;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center 60% !important;
     background-repeat: no-repeat !important;
   }
 
@@ -104,10 +104,10 @@ body {
   }
 
   .hero-title span:first-child {
-    font-size: clamp(1.4rem, 6vw, 2rem) !important;
+    font-size: clamp(2.8rem, 12vw, 4.5rem) !important;
   }
   .hero-title span:nth-child(2) {
-    font-size: clamp(1.1rem, 5vw, 1.6rem) !important;
+    font-size: clamp(2.2rem, 9.5vw, 3.5rem) !important;
     white-space: nowrap !important;
     margin-right: 0 !important;
   }
