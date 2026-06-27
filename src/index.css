@@ -76,6 +76,7 @@ body {
     height: 68dvh !important;
     min-height: 420px !important;
     max-height: none !important;
+    touch-action: pan-y !important;
   }
 
   /* Portrait image, position shifted to keep band members centered */

@@ -1,19 +1,15 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Button from "./Button";
 
-/**
- * Immersive, asymmetric hero.
- * - Full-bleed darkened band photo with scroll parallax
- * - Film-grain + drifting ember glow for cinematic texture
- * - Heavy Fraunces display type, anchored bottom-left (grid intentionally broken)
- * - Framer Motion: staggered slow fade-up, living flicker on the ember accent
- *
- * Self-contained so it can be swapped back out cleanly during testing.
- */
 export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640);
+  }, []);
 
   // Parallax: photo drifts down + scales slightly as the hero scrolls away.
   const { scrollYProgress } = useScroll({
@@ -61,9 +57,9 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          y: reduce ? 0 : photoY,
-          scale: reduce ? 1.08 : photoScale,
-          willChange: "transform",
+          y: (reduce || isMobile) ? 0 : photoY,
+          scale: (reduce || isMobile) ? 1.08 : photoScale,
+          willChange: isMobile ? "auto" : "transform",
         }}
       />
 
@@ -125,8 +121,8 @@ export default function Hero({ bandPhoto = "/assets/band.jpg" }) {
           right: 0,
           bottom: 0,
           zIndex: 3,
-          y: reduce ? 0 : contentY,
-          opacity: reduce ? 1 : contentFade,
+          y: (reduce || isMobile) ? 0 : contentY,
+          opacity: (reduce || isMobile) ? 1 : contentFade,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-end",
